@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: aws-nodejs # NOTE: update this with your service name
+service: serverless-framework # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -20,7 +20,7 @@ service: aws-nodejs # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs6.10
-
+  region: eu-west-1
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -55,7 +55,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  
+  hello:
+    handler: src/functions/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -100,3 +105,7 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-mocha-plugin

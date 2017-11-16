@@ -54,6 +54,6 @@ apt-get -y install ufw
 ufw allow 80/tcp
 
 service mysql restart
-echo "export PS1=\"expat-services-framework:\\w:\\u# \"" >> /root/.bashrc
+echo "export PS1=\"serverless-framework:\\w:\\u# \"" >> /root/.bashrc
 echo " *** To test http endpoints run 'sls offline start --host [vagrant IP Address] --port 80 --stage local' ***"
 echo "*** PROVISION FINISHED ***"
