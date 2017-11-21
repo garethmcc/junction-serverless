@@ -1,0 +1,17 @@
+import { <%= handlerName %> } from '../../functions/<%= handlerName %>'
+import { expect } from 'chai'
+import 'mocha'
+//interface ResponseBody {
+//  message : number
+//}
+
+const context: any = {
+  callbackWaitsForEmptyEventLoop: false
+}
+describe('template test', () => {
+  it ('template test', () => {
+    return <%= handlerName %>({}, context , (error, response: any ) => {
+      expect(response).to.not.be.empty
+    })
+  })
+})
