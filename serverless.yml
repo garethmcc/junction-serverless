@@ -61,7 +61,6 @@ functions:
       - http:
           path: hello
           method: get
-
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -109,3 +108,7 @@ plugins:
   - serverless-plugin-typescript
   - serverless-offline
   - serverless-mocha-plugin
+custom:
+  serverless-mocha-plugin:
+    functionTemplate: templates/functionTemplate.ejs
+    testTemplate: templates/testTemplate.ejs
