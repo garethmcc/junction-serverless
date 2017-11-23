@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register src/test/**/*.spec.ts --no-cache",
-    "http": "serverless offline --host 192.168.50.10 --port 80"
+    "http": "serverless offline --host 192.168.50.10 --port 80",
+    "dbInit": "sequelize init --config config/db.js --migrations-path src/migrations --seeders-path src/seeders --models-path src/models --force"
   },
   "author": "Gareth McCumskey",
   "license": "ISC"
